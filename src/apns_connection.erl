@@ -231,7 +231,8 @@ open_origin(internal, _, #{connection := Connection} = StateData) ->
     {next_event, internal, { Host
                            , Port
                            , #{ protocols      => [http2]
-                              , transport_opts => TransportOpts
+                              , transport => tls
+                              , tls_opts => TransportOpts
                               , retry          => 0
                               }}}}.
 
